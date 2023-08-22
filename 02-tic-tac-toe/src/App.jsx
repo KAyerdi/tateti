@@ -75,7 +75,7 @@ function App() {
     if (newWinner) {
       setWinner(newWinner)
     } else if (checkEndGame(newBoard)) {
-      setWinner(false)
+      setWinner(false) //empate
   }
   }
   return (
