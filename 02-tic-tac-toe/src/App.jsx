@@ -1,33 +1,41 @@
+import { useState } from "react"
+
 const TURNS = {
   X:"x",
   O:"o"
 }
 
-const board = Array(9).fill(null)
 
 
+const Square = ({children, updateBoard, index}) => {
+  return (
+  <div className="square">
+  {children}
+  </div>
+  )
+}
 
 function App() {
-  const [count, setCount] = useState(0)
-
+  const [board, setBoard]  = useState(Array(9).fill(null))
+  const [turn, setTurn] = useState(TURNS.X)
   return (
-    <>
-    <main className="">
+    <main className="board">
       <h1>TIC TAC TOE</h1>
-    </main>
-      
       <section className="game">
       {
         board.map((_, index) => {
-          <div className="cell" key ={index}>
-            <span className="cell_content">
-              {index}
-            </span>
-          </div>
+          return (
+          <Square
+            key={index}
+            index={index}
+            >
+              {board [index]}
+            </Square>
+          )
         })
       }
       </section>
-    </>
+    </main>
   )
 }
 
