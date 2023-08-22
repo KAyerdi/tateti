@@ -5,8 +5,6 @@ const TURNS = {
   O:"o"
 }
 
-
-
 const Square = ({children, isSelected, updateBoard, index}) => {
 
   const className= `square ${isSelected ? 'is-selected' : ''}`
@@ -27,8 +25,13 @@ function App() {
 
   const [turn, setTurn] = useState(TURNS.X)
 
-  const updateBoard = () => {
-    const newTurn = turn == TURN.X ? TURN.O : TURN.X
+  const updateBoard = (index) => {
+    const newBoard = [... board]
+    newBoard[index] = turn
+    setBoard(newBoard)
+
+
+    const newTurn = turn == TURNS.X ? TURNS.O : TURNS.X
     setTurn(newTurn)
   }
   return (
