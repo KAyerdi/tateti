@@ -1,9 +1,9 @@
 import confetti from "canvas-confetti"
 import { useState } from "react"
 import { Square } from "./components/Square"
-import { TURNS, WINNER_COMBOS } from "./components/constants"
-import { checkWinnerFrom } from "./logic/board"
+import { TURNS } from "./components/constants"
 
+// me falta acomodar los import y los export minuto 48:53 midudev.
 function App() {
 
   const [board, setBoard]  = useState(Array(9).fill(null))
