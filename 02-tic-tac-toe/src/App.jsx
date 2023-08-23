@@ -2,6 +2,7 @@ import confetti from "canvas-confetti"
 import { useState } from "react"
 import { Square } from "./components/Square"
 import { TURNS, WINNER_COMBOS } from "./components/constants"
+import { checkWinnerFrom } from "./logic/board"
 
 function App() {
 
